@@ -1,10 +1,10 @@
-FROM node:20
+FROM node:22
+
 WORKDIR /app
 
 COPY package.json ./
-COPY yarn.lock ./
 
-RUN yarn install
+RUN npm install
 COPY . .
 
-RUN yarn run build
+RUN npm run sbuild
